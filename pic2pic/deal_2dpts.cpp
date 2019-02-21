@@ -84,6 +84,7 @@ void flood_fill(
 		int idx = que.front().first;
 		int dx = que.front().second.x, dy = que.front().second.y;
 		que.pop();
+		if (dx == 2 || dx == -2 || dy == 2 || dy == -2) continue;
 		printf("fdfl %d %d %d\n", idx, dx, dy);
 		for (int i = 0; i < 8; i++) {
 			int du = dx + fdfl_dx[i], dv = dy + fdfl_dy[i];

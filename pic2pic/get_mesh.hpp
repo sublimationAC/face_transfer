@@ -14,8 +14,8 @@
 #include <queue>
 
 #define normalization
-#define win64
-//#define linux
+//#define win64
+#define linux
 
 #define same_id
 
@@ -70,6 +70,16 @@ void get_mesh2d_i(
 	DataPoint &data, Eigen::MatrixX2f &mesh_2d_i, std::string path_over01_idx,
 	Eigen::MatrixXf &bldshps, Eigen::VectorXi &over01_idx);
 
+void get_mesh2d_i_spfbds(
+	DataPoint &data, Eigen::MatrixX2f &mesh_2d_i, std::string path_over01_idx,
+	Eigen::MatrixXf &spf_bldshps, Eigen::VectorXi &over01_idx);
+
 double dis_cv_pt(cv::Point2d pointO, cv::Point2d pointA);
 
 void cal_data_landmarks(DataPoint &data, Eigen::MatrixXf &bldshps);
+
+void cal_data_landmarks_spfbds(DataPoint &data, Eigen::MatrixXf &spf_bldshps);
+
+void cal_spf_bldshps(
+	Eigen::MatrixXf &bldshps, DataPoint &data, Eigen::MatrixXf &result);
+
